@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <div th:replace="components :: div.link"></div>
+</head>
+<body>
+    <div th:replace="components :: nav"></div>
+
+    <div class="container-fluid text-center m-3 w-75 mx-auto">
+    Registration form:
+    <form th:method="POST" th:action="@{/doctors/registration}">
+        <label for="first_name">First Name</label>
+        <input id="first_name" th:name="first_name">
+        <br>
+        <label for="last_name">Last Name</label>
+        <input id="last_name" th:name="last_name">
+        <br>
+        <label for="email">Email</label>
+        <input id="email" th:name="email"  type="email">
+        <br>
+        <label for="specialty">Specialty</label>
+            <select id="specialty" name="specialty">
+                <option th:each="specialty : ${T(web.clinicApp.entity.Specialty).values()}"
+                        th:value="${specialty}" th:text="${specialty.label}">
+                </option>
+            </select>
+        <br>
+        <label for="password">Password</label>
+        <input id="password" th:name="password" type="password">
+        <br>
+        <input type="submit" value="REGISTER">
+    </form>
+    </div>
+</body>
+</html>

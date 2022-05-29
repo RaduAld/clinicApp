@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <div th:replace="components :: div.link"></div>
+</head>
+<body>
+    <div th:replace="components :: nav"></div>
+
+    <div class="container-fluid text-center m-3 w-75 mx-auto">
+    Registration form:
+    <form th:method="POST" th:action="@{/patients/registration}">
+        <label for="first_name">First Name</label>
+        <input id="first_name" th:name="first_name">
+        <br>
+        <label for="last_name">Last Name</label>
+        <input id="last_name" th:name="last_name">
+        <br>
+        <label for="email">Email</label>
+        <input id="email" th:name="email"  type="email">
+        <br>
+        <label for="email">Date of birth</label>
+        <input id="dob" th:name="dob" type="date">
+        <br>
+        <label for="password">Password</label>
+        <input id="password" th:name="password" type="password">
+        <br>
+        <input type="submit" value="REGISTER">
+    </form>
+    </div>
+</body>
+</html>

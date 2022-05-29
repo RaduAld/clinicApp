@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Users</title>
+        <div th:replace="components :: div.link"></div>
+        <script>
+            function refresh(){
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("actualCount").innerHTML = this.responseText;
+                    const actualUserCount = JSON.parse(this.responseText).usersCount;
+                    const displayedUserCount = document.getElementById("noOfUsers").innerText;
+
+                    if(actualUserCount != displayedUserCount) {
+                        location.reload();
+                    }
+                }
+                xhttp.open("GET", "/rest/users/count");
+                xhttp.send();
+                window.setTimeout(refresh, 10000)
+            }
+        </script>
+    </head>
+    <body>
+        <div th:replace="components :: nav"></div>
+        <div class="container-fluid text-center m-3 w-75 mx-auto">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="patient: ${patients}">
+                    <td th:text="${patient.user.first_name} "></td>
+                    <td th:text="${patient.user.last_name} "></td>
+                    <td th:text="${patient.dob} "></td>
+                    <td th:text="${patient.user.email} "></td>
+                    <td><a th:href="@{'/users/delete/' + ${patient.user.userId}}">delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
