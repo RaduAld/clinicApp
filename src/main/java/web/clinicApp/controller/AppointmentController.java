@@ -53,17 +53,11 @@ public class AppointmentController {
     public String appointmentAdd(Model model, Hour time, Doctor selectedDoctor, String selectedDate){
         model.addAttribute("isUserDoctor", isUserDoctor());
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-        model.addAttribute("today", dateFormat.format(date));
+        LocalDate date = LocalDate.now();
+        model.addAttribute("today", date);
 
         List<Doctor> docs = this.doctorRepository.findAll();
-        List<User> userDoctors = new ArrayList<>();
-        for (Doctor doctor : docs) {
-            User doctorUser = doctor.getUser();
-            userDoctors.add(doctorUser);
-        }
-        model.addAttribute("userDoctors", userDoctors);
+        model.addAttribute("doctors", docs);
 
         if (time != null){
             model.addAttribute("notAvailableTime", time);

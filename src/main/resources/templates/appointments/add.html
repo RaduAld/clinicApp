@@ -15,24 +15,29 @@
         <form th:method="POST" th:action="@{/appointments/add}">
         <label for="doctor">Doctor</label>
         <select id="doctor" th:name="doctor" required>
-            <span th:each="userDoctor : ${userDoctors}">
+            <span th:each="doc : ${doctors}">
                 <span th:if="${selectedDoctor}">
-                    <option th:if="${userDoctor.userId == selectedDoctor.user.userId}"
-                            th:value="${userDoctor.email}" th:text="${userDoctor.last_name} + ' ' + ${userDoctor.first_name}" selected="selected">
+                    <option th:if="${doc.user.userId == selectedDoctor.user.userId}"
+                            th:value="${doc.user.email}" th:text="${doc.user.last_name} + ' ' + ${doc.user.first_name} + ' (' + ${doc.specialty.label} + ')'" selected="selected">
                     </option>
-                    <option th:unless="${userDoctor.userId == selectedDoctor.user.userId}"
-                            th:value="${userDoctor.email}" th:text="${userDoctor.last_name} + ' ' + ${userDoctor.first_name}">
+                    <option th:unless="${doc.user.userId == selectedDoctor.user.userId}"
+                            th:value="${doc.user.email}" th:text="${doc.user.last_name} + ' ' + ${doc.user.first_name} + ' (' + ${doc.specialty.label} + ')'">
                     </option>
                 </span>
                 <span th:unless="${selectedDoctor}">
-                    <option th:value="${userDoctor.email}" th:text="${userDoctor.last_name} + ' ' + ${userDoctor.first_name}">
+                    <option th:value="${doc.user.email}" th:text="${doc.user.last_name} + ' ' + ${doc.user.first_name} + ' (' + ${doc.specialty.label} + ')'">
                     </option>
                 </span>
             </span>
         </select>
         <br>
         <label for="date">Date</label>
-        <input id="date" th:name="date" type="date"  value="${selectedDate}" th:min="${today}" required>
+        <span th:if="${selectedDate}">
+            <input id="date" th:name="date" type="date"  th:value="${selectedDate}" th:min="${today}" required>
+        </span>
+        <span th:unless="${selectedDate}">
+            <input id="date" th:name="date" type="date"  th:value="${today}" th:min="${today}" required>
+        </span>
         <br>
         <label for="time">Time</label>
         <select id="time" th:name="time" required>

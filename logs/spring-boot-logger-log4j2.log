@@ -1,28 +1,23 @@
-2022-05-30 03:25:38,767 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
-2022-05-30 03:25:38,799 INFO o.s.b.StartupInfoLogger [main] Starting ClinicAppApplication using Java 17.0.3.1 on 192-168-0-184.rdsnet.ro with PID 3765 (/Users/radua/Documents/Radu/It/clinicApp/target/classes started by radua in /Users/radua/Documents/Radu/It/clinicApp)
-2022-05-30 03:25:38,803 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-05-30 03:25:39,316 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-05-30 03:25:39,356 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 32 ms. Found 4 JPA repository interfaces.
-2022-05-30 03:25:39,782 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2022-05-30 03:25:39,789 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2022-05-30 03:25:39,790 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
-2022-05-30 03:25:39,790 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.62]
-2022-05-30 03:25:39,863 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-05-30 03:25:39,863 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1025 ms
-2022-05-30 03:25:39,976 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-05-30 03:25:40,017 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.8.Final
-2022-05-30 03:25:40,148 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-05-30 03:25:40,218 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2022-05-30 03:25:40,355 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-05-30 03:25:40,368 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2022-05-30 03:25:40,899 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-05-30 03:25:40,907 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-05-30 03:25:40,928 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-05-30 03:25:41,421 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fe9adfb, org.springframework.security.web.context.SecurityContextPersistenceFilter@571c7572, org.springframework.security.web.header.HeaderWriterFilter@608c2042, org.springframework.security.web.csrf.CsrfFilter@2aac87ab, org.springframework.security.web.authentication.logout.LogoutFilter@325e03b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5c81ddab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15a0f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43dddfdd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f8fe81e, org.springframework.security.web.session.SessionManagementFilter@40199d5e, org.springframework.security.web.access.ExceptionTranslationFilter@e460ca1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f7a65e]
-2022-05-30 03:25:41,551 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
-2022-05-30 03:25:41,661 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2022-05-30 03:25:41,674 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2022-05-30 03:25:41,681 INFO o.s.b.StartupInfoLogger [main] Started ClinicAppApplication in 3.143 seconds (JVM running for 3.765)
-2022-05-30 03:25:44,226 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-05-30 03:25:44,226 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-05-30 03:25:44,227 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2022-05-30 18:16:16,968 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-05-30 18:16:17,005 INFO o.s.b.StartupInfoLogger [main] Starting ClinicAppApplication using Java 17.0.3.1 on 192-168-0-184.rdsnet.ro with PID 2781 (/Users/radua/Documents/Radu/It/clinicApp/target/classes started by radua in /Users/radua/Documents/Radu/It/clinicApp)
+2022-05-30 18:16:17,009 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-05-30 18:16:17,489 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-30 18:16:17,534 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 33 ms. Found 4 JPA repository interfaces.
+2022-05-30 18:16:17,923 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2022-05-30 18:16:18,002 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 959 ms
+2022-05-30 18:16:18,120 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-30 18:16:18,159 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.8.Final
+2022-05-30 18:16:18,274 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-30 18:16:18,343 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2022-05-30 18:16:18,473 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-05-30 18:16:18,485 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-05-30 18:16:18,975 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-30 18:16:18,982 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 18:16:18,998 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-30 18:16:19,546 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3dc7c5fd, org.springframework.security.web.context.SecurityContextPersistenceFilter@a238a8e, org.springframework.security.web.header.HeaderWriterFilter@7a13ad55, org.springframework.security.web.csrf.CsrfFilter@77ad2767, org.springframework.security.web.authentication.logout.LogoutFilter@334d825c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@19b3d3a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fcfe065, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@325e03b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62871522, org.springframework.security.web.session.SessionManagementFilter@20a116a0, org.springframework.security.web.access.ExceptionTranslationFilter@745c8a04, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@fdf029a]
+2022-05-30 18:16:19,692 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2022-05-30 18:16:19,822 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-30 18:16:19,829 INFO o.s.b.StartupInfoLogger [main] Started ClinicAppApplication in 3.076 seconds (JVM running for 3.715)
+2022-05-30 18:16:19,843 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-30 18:16:19,844 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-05-30 18:16:19,846 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
