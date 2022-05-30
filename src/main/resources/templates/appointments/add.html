@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <div th:replace="components :: div.link"></div>
+</head>
+<body>
+    <div th:replace="components :: nav"></div>
+
+    <div class="container-fluid text-center m-3 w-75 mx-auto">
+        <div th:if="${notAvailableTime}">
+            <p>The selected time (<span th:text="${notAvailableTime.label}"></span>) is not available!</p>
+        </div>
+    Create appointment:
+        <form th:method="POST" th:action="@{/appointments/add}">
+        <label for="doctor">Doctor</label>
+        <select id="doctor" th:name="doctor" required>
+            <span th:each="userDoctor : ${userDoctors}">
+                <span th:if="${selectedDoctor}">
+                    <option th:if="${userDoctor.userId == selectedDoctor.user.userId}"
+                            th:value="${userDoctor.email}" th:text="${userDoctor.last_name} + ' ' + ${userDoctor.first_name}" selected="selected">
+                    </option>
+                    <option th:unless="${userDoctor.userId == selectedDoctor.user.userId}"
+                            th:value="${userDoctor.email}" th:text="${userDoctor.last_name} + ' ' + ${userDoctor.first_name}">
+                    </option>
+                </span>
+                <span th:unless="${selectedDoctor}">
+                    <option th:value="${userDoctor.email}" th:text="${userDoctor.last_name} + ' ' + ${userDoctor.first_name}">
+                    </option>
+                </span>
+            </span>
+        </select>
+        <br>
+        <label for="date">Date</label>
+        <input id="date" th:name="date" type="date"  value="${selectedDate}" th:min="${today}" required>
+        <br>
+        <label for="time">Time</label>
+        <select id="time" th:name="time" required>
+            <option th:each="hour : ${T(web.clinicApp.entity.Hour).values()}"
+                    th:value="${hour}" th:text="${hour.label}">
+            </option>
+        </select>
+        <br>
+        <input type="submit" value="Create">
+    </form>
+    </div>
+</body>
+</html>

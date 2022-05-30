@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
-
+@Entity
+@Table(name = "appointments")
 public class Appointment {
 
     @Id
@@ -19,17 +20,18 @@ public class Appointment {
     @JoinColumn(name = "doctorId")
     private Doctor doctor;
 
-
-
     private LocalDate date;
+
+    private Hour time;
 
     public Appointment() {
     }
 
-    public Appointment(Patient patient, Doctor doctor, LocalDate date) {
+    public Appointment(Patient patient, Doctor doctor, LocalDate date, Hour time) {
         this.patient = patient;
         this.doctor = doctor;
         this.date = date;
+        this.time = time;
     }
 
     public UUID getAppointmentId() {
@@ -58,5 +60,13 @@ public class Appointment {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public Hour getTime() {
+        return time;
+    }
+
+    public void setTime(Hour time) {
+        this.time = time;
     }
 }

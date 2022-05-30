@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Users</title>
+        <title>Doctors</title>
         <div th:replace="components :: div.link"></div>
     </head>
     <body>
@@ -23,7 +23,7 @@
                     <td th:text="${doctor.user.last_name} "></td>
                     <td th:text="${doctor.specialty.label} "></td>
                     <td th:text="${doctor.user.email} "></td>
-                    <td><a th:href="@{'/users/delete/' + ${doctor.user.userId}}">delete</a></td>
+                    <td><a th:href="@{'/doctors/delete/' + ${doctor.user.email}}" onClick="window.location.reload();">delete</a></td>
                 </tr>
                 </tbody>
             </table>

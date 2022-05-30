@@ -8,10 +8,19 @@
 
 <nav class="nav border justify-content-center">
     <a class="nav-link" th:href="@{/}">Home</a>
+
+    <div sec:authorize="hasRole('ROLE_USER')">
+        <a class="nav-link" th:if="${isUserDoctor}"  th:href="@{/doctor/appointments}">Appointments</a>
+        <a class="nav-link" th:unless="${isUserDoctor}" th:href="@{/appointments/}">Appointments</a>
+        <a class="nav-link" th:unless="${isUserDoctor}" th:href="@{/appointments/add}">Add Appointment</a>
+    </div>
+
     <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/patients}">Patients</a>
     <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/doctors}">Doctors</a>
-    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/patients/registration}">Registration</a>
     <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/doctors/registration}">Doctor Registration</a>
+
+
+    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/patients/registration}">Registration</a>
     <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}">Log in</a>
     <form th:action="@{/logout}" sec:authorize="isAuthenticated()" method="post">
         <input id="submit" class="nav-link btn" type="submit" value="Sign Out"/>

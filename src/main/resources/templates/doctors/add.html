@@ -11,20 +11,20 @@
     Registration form:
     <form th:method="POST" th:action="@{/doctors/registration}">
         <label for="first_name">First Name</label>
-        <input id="first_name" th:name="first_name">
+        <input id="first_name" th:name="first_name" required>
         <br>
         <label for="last_name">Last Name</label>
-        <input id="last_name" th:name="last_name">
+        <input id="last_name" th:name="last_name" required>
         <br>
         <label for="email">Email</label>
-        <input id="email" th:name="email"  type="email">
+        <input id="email" th:name="email"  type="email" required>
         <br>
         <label for="specialty">Specialty</label>
-            <select id="specialty" name="specialty">
-                <option th:each="specialty : ${T(web.clinicApp.entity.Specialty).values()}"
-                        th:value="${specialty}" th:text="${specialty.label}">
-                </option>
-            </select>
+        <select id="specialty" name="specialty" required>
+            <option th:each="specialty : ${T(web.clinicApp.entity.Specialty).values()}"
+                    th:value="${specialty}" th:text="${specialty.label}">
+            </option>
+        </select>
         <br>
         <label for="password">Password</label>
         <input id="password" th:name="password" type="password">

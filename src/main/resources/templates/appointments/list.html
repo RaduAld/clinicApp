@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <div th:replace="components :: div.link"></div>
+</head>
+<body>
+<div th:replace="components :: nav"></div>
+<div class="container-fluid text-center m-3 w-50 mx-auto">
+
+    <div th:if="${appointments}">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Doctor</th>
+                <th scope="col">Speciality</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="appointment: ${appointments}">
+                    <td th:text="${appointment.doctor.user.last_name} + ' ' + ${appointment.doctor.user.first_name}"></td>
+                    <td th:text="${appointment.doctor.specialty.label}"></td>
+                    <td th:text="${appointment.date}"></td>
+                    <td th:text="${appointment.time.label}"></td>
+                    <td><a th:href="@{'/appointments/delete/' + ${appointment.appointmentId}}" onClick="window.location.reload();">delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:unless="${appointments}">
+            No appointments yet.
+    </div>
+</div>
+</body>
+</html>

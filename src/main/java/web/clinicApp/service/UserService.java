@@ -1,18 +1,18 @@
 package web.clinicApp.service;
 
+import web.clinicApp.entity.Doctor;
+import web.clinicApp.repository.PatientRepository;
+import web.clinicApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import web.clinicApp.entity.Doctor;
 import web.clinicApp.entity.Patient;
 import web.clinicApp.entity.Specialty;
 import web.clinicApp.entity.User;
 import web.clinicApp.repository.DoctorRepository;
-import web.clinicApp.repository.PatientRepository;
-import web.clinicApp.repository.UserRepository;
 
 import java.time.LocalDate;
 

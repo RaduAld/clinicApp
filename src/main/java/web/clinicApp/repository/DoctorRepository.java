@@ -1,10 +1,16 @@
 package web.clinicApp.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import web.clinicApp.entity.Doctor;
-import web.clinicApp.entity.Patient;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
+import web.clinicApp.entity.User;
 
 import java.util.UUID;
 
 public interface DoctorRepository extends JpaRepository<Doctor, UUID> {
+
+    @Transactional
+    void deleteByUser(User user);
+
+    Doctor findByUser(User user);
 }
